@@ -1,0 +1,16 @@
+def is_prima(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+n = int(input("Masukkan bilangan: "))
+
+prima_terdekat = n - 1
+while prima_terdekat > 1:
+    if is_prima(prima_terdekat):
+        print(f"Bilangan prima terdekat < {n} adalah {prima_terdekat}")
+        break
+    prima_terdekat -= 1
